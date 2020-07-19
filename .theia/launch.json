@@ -3,6 +3,14 @@
   "configurations": [
 
     {
+      "name": "web",
+      "type": "php",
+      "request": "launch",
+      "port": 9000,
+      "stopOnEntry": true,
+      "pathMappings": { "${workspaceRoot}/public": "${workspaceRoot}/public" }
+    },
+    {
       "type": "php",
       "name": "Launch",
       "request": "launch",
