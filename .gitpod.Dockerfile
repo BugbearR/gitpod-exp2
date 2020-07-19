@@ -39,3 +39,4 @@ COPY php/fpm/pool.d/www.conf /etc/php/7.4/fpm/pool.d/
 # RUN brew install bastet
 #
 # More information: https://www.gitpod.io/docs/config-docker/
+#
