@@ -3,36 +3,24 @@
   "configurations": [
 
     {
-      "name": "web stop on entry",
+      "name": "Web stop on entry",
       "type": "php",
       "request": "launch",
-      "port": 9001,
-      "stopOnEntry": true,
-      "pathMappings": { "${workspaceRoot}/public": "${workspaceRoot}/public" }
+      "port": 9000,
+      "stopOnEntry": true
     },
     {
-      "name": "web non stop",
+      "name": "Web non stop",
       "type": "php",
       "request": "launch",
-      "port": 9001,
-      "stopOnEntry": false,
-      "pathMappings": { "${workspaceRoot}/public": "${workspaceRoot}/public" }
-    },
-    {
-      "type": "php",
-      "name": "Launch",
-      "request": "launch",
-      "port": 9001,
-      "stopOnEntry": true,
-      "program": "${workspaceRoot}/www/phpinfo.php",
-      "cwd": "${workspaceRoot}",
-      "externalConsole": false
+      "port": 9000,
+      "stopOnEntry": false
     },
     {
       "type": "php",
-      "name": "sum",
+      "name": "Program sum",
       "request": "launch",
-      "port": 9001,
+      "port": 9000,
       "stopOnEntry": true,
       "program": "${workspaceRoot}/www/sum.php",
       "cwd": "${workspaceRoot}",
