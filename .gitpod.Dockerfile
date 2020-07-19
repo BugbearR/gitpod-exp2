@@ -18,7 +18,8 @@ RUN apt-get update -q \
     && make install \
     && export X_PHP_INI_CONFD="$(php --ini | grep 'Scan for additional .ini files in: ' | sed -e 's/^[^:]*: //')" \
     && export X_PHP_LIB="$(php -i | grep '^extension_dir ' | sed -e 's/^.*=> //')" \
-    && sh /tmp/render_template.sh /tmp/99-xdebug.ini.tpl > "$X_PHP_INI_CONFD"/99-xdebug.ini \
+    && sh /tmp/render_template.sh /tmp/99-xdebug.ini.tpl > /etc/php/7.4/cli/conf.d/99-xdebug.ini \
+    && sh /tmp/render_template.sh /tmp/99-xdebug.ini.tpl > /etc/php/7.4/fpm/conf.d/99-xdebug.ini \
     && mkdir -m 0755 /var/log/php \
     && chown gitpod:gitpod /var/log/php \
     && mkdir -m 0755 /run/php \
