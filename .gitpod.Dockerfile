@@ -38,4 +38,3 @@ COPY nginx/nginx.conf /etc/nginx/
 # RUN brew install bastet
 #
 # More information: https://www.gitpod.io/docs/config-docker/
-#
