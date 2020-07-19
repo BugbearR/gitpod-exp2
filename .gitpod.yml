@@ -5,7 +5,13 @@ image:
 ports:
   - port: 9000
     onOpen: ignore
+  - port: 9001
+    onOpen: ignore
 
 tasks:
   - init: echo initialize
     command: echo start project
+
+#
+#nginx &&
+#    multitail /var/log/nginx/access.log -I /var/log/nginx/error.log

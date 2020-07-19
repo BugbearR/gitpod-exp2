@@ -1,12 +1,14 @@
 {
   "version": "0.2.0",
   "configurations": [
+
     {
       "type": "php",
       "name": "Launch",
       "request": "launch",
+      "port": 9000,
       "stopOnEntry": true,
-      "program": "${file}",
+      "program": "/workspace/gitpod-exp2/phpinfo.php",
       "cwd": "${workspaceRoot}",
       "externalConsole": false
     }
