@@ -4,10 +4,6 @@ USER root
 
 COPY xdebug/99-xdebug.ini.tpl /tmp
 COPY xdebug/render_template.sh /tmp
-COPY php/cli/php.ini /etc/php/7.4/cli/
-COPY php/fpm/php.ini /etc/php/7.4/fpm/
-COPY php/fpm/php-fpm.conf /etc/php/7.4/fpm/
-COPY php/fpm/pool.d/www.conf /etc/php/7.4/fpm/pool.d/
 COPY nginx/fastcgi_params /etc/nginx/
 COPY nginx/nginx.conf /etc/nginx/
 
@@ -32,6 +28,11 @@ RUN apt-get update -q \
     && chown gitpod:gitpod /run/php \
     && apt-get clean \
     && rm -rf /var/cache/apt/* /var/lib/apt/lists/*
+
+COPY php/cli/php.ini /etc/php/7.4/cli/
+COPY php/fpm/php.ini /etc/php/7.4/fpm/
+COPY php/fpm/php-fpm.conf /etc/php/7.4/fpm/
+COPY php/fpm/pool.d/www.conf /etc/php/7.4/fpm/pool.d/
 
 # Install custom tools, runtimes, etc.
 # For example "bastet", a command-line tetris clone:
