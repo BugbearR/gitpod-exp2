@@ -10,6 +10,8 @@ COPY render_template.sh /tmp
 RUN apt-get update -q \
     && apt-get install -y lsb-release php7.4-dev php7.4-fpm \
     && curl -L https://github.com/xdebug/xdebug/archive/2.9.6.tar.gz -o /tmp/xdebug-2.9.6.tar.gz \
+    && cd /tmp \
+    && tar xf xdebug-2.9.6.tar.gz \
     && cd /tmp/xdebug-2.9.6 \
     && phpize \
     && ./configure \
