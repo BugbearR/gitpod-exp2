@@ -7,7 +7,7 @@ COPY xdebug/render_template.sh /tmp
 #    && git clone https://github.com/xdebug/xdebug.git -b 2.9.6 \
 
 RUN apt-get update -q \
-    && apt-get install -y lsb-release php7.4-dev php7.4-fpm \
+    && apt-get install -y lsb-release php7.4-dev php7.4-fpm phpmyadmin \
     && curl -L https://github.com/xdebug/xdebug/archive/2.9.6.tar.gz -o /tmp/xdebug-2.9.6.tar.gz \
     && cd /tmp \
     && tar xf xdebug-2.9.6.tar.gz \
