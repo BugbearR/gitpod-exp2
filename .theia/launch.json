@@ -8,7 +8,17 @@
       "request": "launch",
       "port": 9000,
       "stopOnEntry": true,
-      "program": "/workspace/gitpod-exp2/phpinfo.php",
+      "program": "${workspaceRoot}/www/phpinfo.php",
+      "cwd": "${workspaceRoot}",
+      "externalConsole": false
+    },
+    {
+      "type": "php",
+      "name": "sum",
+      "request": "launch",
+      "port": 9000,
+      "stopOnEntry": true,
+      "program": "${workspaceRoot}/www/sum.php",
       "cwd": "${workspaceRoot}",
       "externalConsole": false
     }
