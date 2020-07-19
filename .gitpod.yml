@@ -3,15 +3,12 @@ image:
   context: mycontext
 
 ports:
+  - port: 8080
+    onOpen: open-preview
   - port: 9000
-    onOpen: ignore
-  - port: 9001
     onOpen: ignore
 
 tasks:
   - init: echo initialize
-    command: echo start project
-
-#
-#nginx &&
-#    multitail /var/log/nginx/access.log -I /var/log/nginx/error.log
+  - command: nginx && multitail /var/log/nginx/access.log -I /var/log/nginx/error.log
+  - command: /usr/sbin/php-fpm7.4 --fpm-config /etc/php/7.4/fpm/php-fpm.conf
