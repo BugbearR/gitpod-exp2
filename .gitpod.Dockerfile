@@ -16,7 +16,7 @@ RUN apt-get update -q \
     && make install \
     && export X_PHP_INI_CONFD="$(php --ini | grep 'Scan for additional .ini files in: ' | sed -e 's/^[^:]*: //')" \
     && export X_PHP_LIB="$(php -i | grep '^extension_dir ' | sed -e 's/^.*=> //')" \
-    && sh /tmp/render_template.sh /tmp/99-xdebug.ini.tpl > /tmp/gitpod-exp2/99-xdebug.ini \
+    && sh /tmp/render_template.sh /tmp/99-xdebug.ini.tpl > /tmp/99-xdebug.ini \
     && rm -rf /var/cache/apt/* /var/lib/apt/lists/*
 
 # Install custom tools, runtimes, etc.
