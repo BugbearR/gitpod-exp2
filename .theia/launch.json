@@ -3,11 +3,19 @@
   "configurations": [
 
     {
-      "name": "web",
+      "name": "web stop on entry",
       "type": "php",
       "request": "launch",
       "port": 9000,
       "stopOnEntry": true,
+      "pathMappings": { "${workspaceRoot}/public": "${workspaceRoot}/public" }
+    },
+    {
+      "name": "web non stop",
+      "type": "php",
+      "request": "launch",
+      "port": 9000,
+      "stopOnEntry": false,
       "pathMappings": { "${workspaceRoot}/public": "${workspaceRoot}/public" }
     },
     {
