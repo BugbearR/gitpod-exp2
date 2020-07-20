@@ -19,9 +19,9 @@ RUN apt-get update -q \
     && export X_PHP_LIB="$(php -i | grep '^extension_dir ' | sed -e 's/^.*=> //')" \
     && sh /tmp/render_template.sh /tmp/99-xdebug.ini.tpl > /etc/php/7.4/cli/conf.d/99-xdebug.ini \
     && sh /tmp/render_template.sh /tmp/99-xdebug.ini.tpl > /etc/php/7.4/fpm/conf.d/99-xdebug.ini \
-    && cd /tmp \
     && curl -L https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-all-languages.tar.xz -o /tmp/phpMyAdmin-5.0.2-all-languages.tar.xz \
-    && tar xf phpMyAdmin-5.0.2-all-languages.tar.xz \
+    && cd /opt \
+    && tar xf /tmp/phpMyAdmin-5.0.2-all-languages.tar.xz \
     && mkdir -m 0755 /var/log/php \
     && chown gitpod:gitpod /var/log/php \
     && mkdir -m 0755 /run/php \
